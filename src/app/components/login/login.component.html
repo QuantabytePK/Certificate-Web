@@ -10,9 +10,12 @@
       <div class="password-field">
         <input [type]="passType" id="password" placeholder="Enter your password" formControlName="password" />
         <span class="password-toggle" (click)="changeVisibility()">
-          {{ passType === 'password' ? '👁️' : '🙈' }}
+          <span class="material-icons">
+            {{ passType === 'password' ? 'visibility' : 'visibility_off' }}
+          </span>
         </span>
       </div>
+      
   
       <div class="keep-logged-in">
         <input type="checkbox" id="keep-logged-in" formControlName="keepLoggedIn" />

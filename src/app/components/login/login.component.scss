@@ -35,6 +35,7 @@ form {
 
     input[type="text"],
     input[type="password"] {
+      height: 42px;
       width: 100%;
       padding: 0.75rem;
       border: 1px solid #ced4da;
@@ -45,24 +46,48 @@ form {
       transition: border-color 0.3s ease;
 
       &:focus {
-        border-color: #00b4d8; // Color for focused border
+        // border-color: #00b4d8; // Color for focused border
         outline: none;
       }
     }
 
+    input[type="password"] {
+      border: none;
+      border-radius: none;
+      overflow: hidden;
+    }
     .password-field {
       position: relative;
-
+      display: flex;
+      border: 1px solid #ced4da; // Outer border for the password field
+      border-radius: 4px;
+      height: 44px;
+    
+      input {
+        flex: 1; // Input takes the full width
+        border: none; // Remove input border
+        outline: none; // Prevent blue outline on focus
+        padding: 0.75rem;
+        font-size: 1rem;
+      }
+    
       .password-toggle {
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
+        width: 44px;
+        background-color: transparent;
         cursor: pointer;
-        color: #00b4d8; // Toggle icon color
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 1.2rem;
+        border: none; // No border on the toggle button
+        outline: none; // Prevent focus outline
+      }
+    
+      &:focus-within {
+        border-color: #00b4d8; // Optional: Highlight the outer border when focused
       }
     }
+    
 
     .keep-logged-in {
       display: flex;

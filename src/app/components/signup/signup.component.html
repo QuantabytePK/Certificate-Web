@@ -12,7 +12,11 @@
       <label for="password">Password</label>
       <div class="password-field">
         <input [type]="passType" id="password" placeholder="Enter your password" formControlName="password" />
-        <span class="password-toggle" (click)="changeVisibility()">{{ passType === 'password' ? '👁️' : '🙈' }}</span>
+        <span class="password-toggle" (click)="changeVisibility()">
+          <span class="material-icons">
+            {{ passType === 'password' ? 'visibility' : 'visibility_off' }}
+          </span>
+        </span>
       </div>
   
       <label for="confirmPassword">Confirm Password</label>

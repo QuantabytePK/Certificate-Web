@@ -39,7 +39,10 @@ form {
       width: 100%;
       padding: 0.75rem;
       border: 1px solid #ced4da;
+      overflow: hidden;
       border-radius: 4px;
+      height: 43px;
+      
       font-size: 1rem;
       color: #495057;
       margin-bottom: 1rem;
@@ -52,19 +55,39 @@ form {
     }
 
     .password-field {
-      position: relative;
-
+      display: flex;
+      overflow: hidden;
+      border: 1px solid #ced4da; // Outer border for the password field
+      border-radius: 4px;
+      height: 42px;
+      
+      input {
+        flex: 1; // Input takes the full width
+        border: none; // Remove input border
+        outline: none; // Prevent blue outline on focus
+        padding: 0.75rem;
+        height: 41px;
+        font-size: 1rem;
+      }
+      
       .password-toggle {
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
+        width: 44px;
+        background-color: transparent;
         cursor: pointer;
-        color: #00b4d8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 1.2rem;
+        border: none;
+        outline: none; // Prevent focus outline
+      }
+      
+      &:focus-within {
+        border-color: #00b4d8; // Optional: Highlight the outer border when focused
       }
     }
-
+    
+    
     .agree-terms {
       display: flex;
       align-items: center;
@@ -74,7 +97,7 @@ form {
         margin-right: 0.5rem;
         accent-color: #00b4d8;
       }
-
+      
       label {
         font-size: 0.9rem;
         color: #24292e;
@@ -89,7 +112,7 @@ form {
         }
       }
     }
-
+    
     button {
       width: 100%;
       padding: 0.75rem;
@@ -100,10 +123,11 @@ form {
       border-radius: 4px;
       cursor: pointer;
       transition: background-color 0.3s ease;
-
+      
       &:hover {
         background-color: #0077b6;
       }
     }
   }
 }
+

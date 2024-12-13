@@ -5,11 +5,8 @@ $teal: #0097B2;
 $light-teal: #00B3C6;
 $gray: #B7B7B7;
 
-
-
 // Toolbar Styles
 mat-toolbar.container {
-    
   background-color: $teal;
   color: $white;
   display: flex;
@@ -23,7 +20,6 @@ mat-toolbar.container {
   width: 170px;
   color: $white;
   font-size: 18px;
-  border-radius: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,17 +39,19 @@ mat-toolbar.container {
 
   &:hover {
     text-decoration: underline;
-  }
-
-  &.logout {
-    background-color: $gray;
-    
-    &:hover {
-      background-color: darken($gray, 10%);
-    }
+    border-radius: 5px; /* Ensure border-radius doesn't change on hover */
   }
 }
 
 .example-spacer {
   flex: 1;
 }
+
+.heading-text {
+  border-radius: 0;
+
+  &:hover {
+    border-radius: 0;
+  }
+}
+
